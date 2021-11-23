@@ -24,7 +24,7 @@ if(isset($_GET["theme"])){
             Prix: ".$value->getPrix()."$<br>
             Theme: ".$value->getTheme()."<br>
             Disponible: ".$value->getDisponible()."<br><br>
-            Extrait de chapitre:<br> <span class=extChap>".$value->getExtraitChapitre()."</span><br><br>
+            <br><br>
             <a href=resultat.php?idLivre='".$value->getIdLivre()."'&theme=".$theme."><button>Informations</button></a>
             </div>
             <img src='".$value->getImage()."'>
