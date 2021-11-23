@@ -1,9 +1,7 @@
 <?php
 
-declare(strict_types=1);
 
-
-class Commande extends Client
+class Commande 
 {
 
     /** @var String */
@@ -24,15 +22,11 @@ class Commande extends Client
     /** @var Int */
     public Int $IdCommande;
 
-    public  $Attribute2;
-
     /** @var [object Object] */
     public Client $idClient;
 
     /** @var Double */
     public Double $PrixTotal;
-
-    public  $Attribute1;
 
 
 

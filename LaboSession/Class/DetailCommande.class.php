@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 
 
 class DetailCommande
@@ -37,9 +36,6 @@ class DetailCommande
     /**
      * 
      */
-    public function Operation1()
-    {
-        // TODO implement here
-    }
+
 
 }
