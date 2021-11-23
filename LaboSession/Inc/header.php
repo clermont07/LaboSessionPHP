@@ -42,7 +42,6 @@ body {
 .header a:hover {
   background-color: #315d69;
   text-transform: bold;
-  text-decoration: underline;
   color:white;
 }
 

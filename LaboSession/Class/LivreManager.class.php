@@ -32,6 +32,16 @@ class LivreManager{
         }     
         return $livres;  
     }
+
+    public function getLivresId($id){
+        $req = $this->_db->query("SELECT * FROM livre WHERE idLivre = ".$id."");
+        $data=$req->fetch(PDO::FETCH_ASSOC);
+        if($data !== Null){
+            $obj1 = new Livre($data);
+            return $obj1;
+        }
+        return false;
+    }
     
 
 }

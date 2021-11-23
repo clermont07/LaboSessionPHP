@@ -130,3 +130,35 @@ h1{
 .extChap{
     font-size: 15px;
 }
+
+
+/*resultat.php*/
+
+.livre{
+    background-color: #9db8bf;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:3%;
+    margin:10px;
+
+}
+
+.livre > header{
+    float: right;
+}
+
+.livre > img{
+    width:15%;
+    height: auto;
+    transition: 2s ease;
+}
+
+.livre > img:hover{
+    transition: 2s ease;
+    width:35%;
+    height: auto;
+}
