@@ -12,13 +12,26 @@ class LivreManager{
     public function setDb($db){
         $this->_db = $db;
     }
+    public function getTest(){
+        return "test";
+    }
     
     public function getDB(){
         return $this->_db;
     }
 
     //fonctions
-
+    public function getLivresTheme($theme){
+        $query = $this->_db->query("SELECT * FROM livre WHERE Theme = '".$theme."'");
+        $livres = array();
+        
+        while($data=$query->fetch(PDO::FETCH_ASSOC)){
+  
+            $livres[] = new Livre($data);
+  
+        }     
+        return $livres;  
+    }
     
 
 }

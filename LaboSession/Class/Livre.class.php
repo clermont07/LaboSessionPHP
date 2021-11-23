@@ -11,7 +11,7 @@ class Livre
 
     private String $auteur;
 
-    private Double $prix;
+    private float $prix;
 
     private String $theme;
 
@@ -19,7 +19,7 @@ class Livre
 
     private String $image;
 
-    private Int $disponibilite;
+    private int $disponible;
 
     private String $extraitChapitre;
 
@@ -45,8 +45,8 @@ class Livre
     public function getImage(){
         return $this->image;
     }
-    public function getDisponibilite(){
-        return $this->disponibilite;
+    public function getDisponible(){
+        return $this->disponible;
     }
     public function getExtraitChapitre(){
         return $this->extraitChapitre;
@@ -64,7 +64,7 @@ class Livre
         $this->auteur = $x;
     }
     public function setPrix($x){
-        $this->prix = $x;
+        $this->prix = floatval($x);
     }
     public function setTheme($x){
         $this->theme = $x;
@@ -75,8 +75,8 @@ class Livre
     public function setImage($x){
         $this->image = $x;
     }
-    public function setDisponibilite($x){
-        $this->disponibilite = $x;
+    public function setDisponible($x){
+        $this->disponible = $x;
     }
     public function setExtraitChapitre($x){
         $this->extraitChapitre = $x;
