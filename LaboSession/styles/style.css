@@ -1,0 +1,83 @@
+.container{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+
+}
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: -3%;
+}
+.items{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.tHorreur{
+
+    width: 25%;
+    padding-left: 10%;
+
+}
+.tScience{
+    padding-left: 9%;
+    width: 25%;
+}
+.tBd{
+    padding-left: 7%;
+    width: 25%;
+}
+.tAnime{
+    padding-left: 10%;
+    width: 25%;
+}
+
+
+.imgHorreur{
+    transition: 1s ease;
+    filter: brightness(100%);
+    width: 25%;
+}
+.imgHorreur:hover{
+    transition: 1s ease;
+    filter: brightness(50%);
+}
+
+.imgScience{
+    transition: 1s ease;
+    filter: brightness(100%);
+    width: 25%;
+}
+.imgScience:hover{
+    transition: 1s ease;
+    filter: brightness(50%);
+}
+
+.imgBd{
+    transition: 1s ease;
+    filter: brightness(100%);
+    width: 25%;
+}
+.imgBd:hover{
+    transition: 1s ease;
+    filter: brightness(50%);
+}
+
+.imgAnime{
+    transition: 1s ease;
+    filter: brightness(100%);
+    width: 25%;
+}
+.imgAnime:hover{
+    transition: 1s ease;
+    filter: brightness(50%);
+}
+
+
+
