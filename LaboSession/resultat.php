@@ -15,14 +15,14 @@ if(isset($_GET["idLivre"])){
     $id = $_GET["idLivre"];
     $theme = $_GET["theme"];
     $livreManager = new LivreManager(connexion("bdd_catalogue"));
-    $result = $livreManager->getLivresId($id);
+    $result = $livreManager->getLivreId($id);
     if($result != false){
 
         $contenu .=  "<div class=livre>
         <div class=header>
         
-        <a href=resultat.php?idLivre='".$result->getIdLivre()."'>Ajouter au panier</a>
-        <a href=resultat.php?idLivre='".$result->getIdLivre()."'>Consulter le panier</a>
+        <a href=panier.php?idLivre='".$result->getIdLivre()."'>Ajouter au panier</a>
+        <a href=panier.php?idLivre=0>Consulter le panier</a>
         <a href=livre.php?theme=$theme>Retour à la recherche</a>
         
         </div>
