@@ -1,6 +1,5 @@
 <?php
 include("./Inc/header.php");
-require("./Inc/fonction.php");
 
 //mise en page
 ?>

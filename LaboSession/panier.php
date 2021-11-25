@@ -1,7 +1,7 @@
 <?php
 
 include("./Inc/header.php");
-require("./Inc/fonction.php");
+
 
 
 if($_GET['idLivre'] != 0){
