@@ -19,10 +19,12 @@ if(isset($_GET["idLivre"])){
     if($result != false){
 
         $contenu .=  "<div class=livre>
-        <div class=header>
+        <div class=header>";
+        if($result->getDisponible() != 0){
+            $contenu.= "<a href=panier.php?idLivre=".$result->getIdLivre().">Ajouter au panier</a>";
+        }
         
-        <a href=panier.php?idLivre='".$result->getIdLivre()."'>Ajouter au panier</a>
-        <a href=panier.php?idLivre=0>Consulter le panier</a>
+        $contenu .= "<a href=panier.php?idLivre=0>Consulter le panier</a>
         <a href=livre.php?theme=$theme>Retour à la recherche</a>
         
         </div>
@@ -35,7 +37,13 @@ if(isset($_GET["idLivre"])){
         Auteur: ".$result->getAuteur()."<br>
         Prix: ".$result->getPrix()."$<br>
         Theme: ".$result->getTheme()."<br>
-        Disponible: ".$result->getDisponible()."<br><br>
+        Disponible: ";
+        if($result->getDisponible() == 0 && $result->getDisponible() == "0"){
+            $contenu .= "<p style=color:red>Non</p><br><br>";    
+        }else{
+            $contenu .= "<p style=color:green>Oui</p><br><br>";
+        }
+        $contenu .= "
         Extrait de chapitre:<br> <span class=extChap>".$result->getExtraitChapitre()."</span><br><br>
        
         </div>

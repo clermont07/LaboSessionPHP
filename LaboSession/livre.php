@@ -23,8 +23,14 @@ if(isset($_GET["theme"])){
             Auteur: ".$value->getAuteur()."<br>
             Prix: ".$value->getPrix()."$<br>
             Theme: ".$value->getTheme()."<br>
-            Disponible: ".$value->getDisponible()."<br><br>
-            <br><br>
+            Disponible: ";
+            if($value->getDisponible() == 0 && $value->getDisponible() == "0"){
+                $contenu .= "<p style=color:red>Non</p><br><br>";
+            }else{
+                $contenu .= "<p style=color:green>Oui</p><br><br>";
+            }
+            
+            $contenu .= "<br><br>
             <a href=resultat.php?idLivre='".$value->getIdLivre()."'&theme=".$theme."><button>Informations</button></a>
             </div>
             <img src='".$value->getImage()."'>

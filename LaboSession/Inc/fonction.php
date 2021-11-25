@@ -110,7 +110,12 @@ function supprimerArticle($idLivre){
 function vide_panier(){
     $_SESSION['panier'] = null;
 }
+?>
+<style>
 
+</style>
+
+<?php
 function affiche_panier(){
     if(isset($_POST['vider'])){
         $_SESSION['panier'] = null;
