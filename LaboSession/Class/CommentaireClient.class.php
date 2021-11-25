@@ -4,24 +4,30 @@
 
 class CommentaireClient
 {
+    private $_idClient,$_Commentaire,$_idLivre;
 
-    /** @var int */
-    public int $idLivre;
+    public function __construct(array $donnee = array()){
+        if(!empty($donnee)){
+            $this->hydrate($donnee);
+        }
+    }
 
-    /** @var String */
-    public String $Commentaire;
+    public function idClient(){  return $this->_idClient;}
+    public function setIdClient ($idClient){$this->_idClient = $idClient;} 
 
-    /** @var int */
-    public int $idClient;
+    public function mommentaire(){            return $this->_Commentaire;}
+    public function setCommentaire($Commentaire){              $this->_Commentaire = $Commentaire;} 
 
+    public function idLivre(){          return $this->_idLivre;}
+    public function setIdLivre($IdLivre){          $this->_idLivre = $IdLivre;} 
 
-
-    /**
-     * Default constructor
-     */
-    public function __construct()
-    {
-        // ...
+    public function hydrate(array $donnee){
+        foreach($donnee as $key => $value){
+            $method = 'set'.ucfirst($key);
+            if(method_exists($this,$method)){
+                $this->$method($value);
+            }
+        }
     }
 
 }

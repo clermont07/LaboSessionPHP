@@ -35,9 +35,6 @@ if(isset($_GET["theme"])){
     }
     echo $contenu;
 }
-
-
-
 ?>
     </div>
 </div>
