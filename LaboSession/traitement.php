@@ -1,6 +1,5 @@
 <?php
-session_start();
-require("inc/fonction.php");
+include("./Inc/header.php");
 
 if(isset($_GET['indice'])){
     $indice = (int)$_GET['indice'];
