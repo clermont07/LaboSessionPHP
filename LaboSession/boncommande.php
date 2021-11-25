@@ -1,5 +1,6 @@
 <style>
 .addComment{
+    margin-top: 20px;
     display:flex;
     flex-direction:column;
     justify-content: center;
@@ -52,16 +53,7 @@ if($resultCommande != null){
             foreach($resultLivre as $keyLivre => $valueLivre){
                 $idLivre = $valueDetail->idLivre();
                 $contenu .= "<tr><td colspan=5 ><p style=font-size:15px>Titre : ".$valueLivre->getTitre();
-                $contenu .= "
-                <tr class=addComment><td>
-                    <form method=post action=boncommande.php>
-                        <input style=width:500px type=text name=commentaire placeHolder='Ajouter un commentaire'>
-                        <input type=submit name=valider value='Ajouter le commentaire'>
-                    </form>
-                </td></tr>
-                ";
                 $contenu .= "<tr><td colspan=5 ><p>Prix : ".$valueLivre->getPrix();
-                
                 $qte =  $valueLivre->getDisponible() - $valueDetail->quantiter();
                 $resultQuantiter = $livreManager->getUpdateQuantiter($qte,$valueLivre->getIdLivre());
                 $count++;
@@ -76,7 +68,23 @@ if($resultCommande != null){
         $contenu .= "<tr><td colspan=5 ><p>Tvq : ".$valueCommande->Tvq();
         $contenu .= "<tr><td colspan=5 ><p>Total : ".$valueCommande->PrixTotal();
         $contenu .="</table></center>";
-        $contenu .="</form>";
+
+        $contenu.= "<div class=addComment><form method='post' action=''><select  name=selectID>";
+        foreach($resultDetail as $keyDetail => $valueDetail){
+            $contenu.="<option value=".$valueDetail->idLivre().">";
+            $resultLivre = $livreManager->getLivresId($valueDetail->idLivre());
+            foreach($resultLivre as $keyLivre => $valueLivre){
+                $contenu.=$valueLivre->getTitre();
+            }
+            $contenu.="</option> ";
+        }
+        $contenu.= "</select>
+            <form method=post action=boncommande.php>
+                <input style=width:500px type=text name=commentaire placeHolder='Ajouter un commentaire'>
+                <input type=submit name=valider value='Ajouter le commentaire'>
+            </form>
+        ";
+        $contenu .="</form></div>";
         
 
 
@@ -85,6 +93,6 @@ if($resultCommande != null){
 }
 if(isset($_POST["valider"])){
     $commentaireClientManager = new CommentaireClientManager(connexion("bdd_catalogue"));
-    $commentaireClientManager->CommentaireClientInserer($idClient,$_POST["commentaire"],$idLivre);
+    $commentaireClientManager->CommentaireClientInserer($idClient,$_POST["commentaire"],$_POST['selectID']);
 }
 ?>

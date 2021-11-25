@@ -44,9 +44,16 @@ if(isset($_GET["idLivre"])){
         }
         $contenu .= "
         Extrait de chapitre:<br> <span class=extChap>".$result->getExtraitChapitre()."</span><br><br>
-       
+        Commentaire de client : <br><ul>";
+
+        $messageManager = new CommentaireClientManager(connexion("bdd_catalogue"));
+        $resultCom = $messageManager->getMessage($result->getIdLivre());
+        foreach($resultCom as $keyCom => $valueCom){
+            $contenu.= "<li>".$valueCom->commentaire()." </li><br>";
+        }
+        $contenu .= "
+        </ul>
         </div>
-        
         </div>";
 
     }else{

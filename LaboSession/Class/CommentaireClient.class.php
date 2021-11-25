@@ -15,7 +15,7 @@ class CommentaireClient
     public function idClient(){  return $this->_idClient;}
     public function setIdClient ($idClient){$this->_idClient = $idClient;} 
 
-    public function mommentaire(){            return $this->_Commentaire;}
+    public function commentaire(){            return $this->_Commentaire;}
     public function setCommentaire($Commentaire){              $this->_Commentaire = $Commentaire;} 
 
     public function idLivre(){          return $this->_idLivre;}
